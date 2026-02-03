@@ -6,19 +6,19 @@ import { cn } from "@/lib/utils";
 const HIGHLIGHTS = [
   {
     href: "https://www.facebook.com/reel/874185545026880",
-    image: "/images/Daddy_Boss.jfif",
+    image: "/images/Daddy_Boss.png",
     alt: "Vlogger highlight at Beany Avenue",
     label: "Vlog Feature",
   },
   {
     href: "https://www.facebook.com/share/r/1AeTMaW2gy/",
-    image: "/images/foodtravel.jfif",
+    image: "/images/foodtravel.png",
     alt: "FoodTravelPH POV at Beany Avenue",
     label: "FoodTravelPH POV",
   },
   {
     href: "https://www.facebook.com/share/v/1CtrbSG1RG/",
-    image: "/images/db.jfif",
+    image: "/images/db.png",
     alt: "Diskarteng Basic feature vlog at Beany Avenue",
     label: "Diskarteng Basic",
   },
