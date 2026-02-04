@@ -21,6 +21,7 @@ const config = {
       fontFamily: {
         sans: ["var(--font-sans)", "system-ui", "sans-serif"],
         heading: ["var(--font-heading)", "serif"],
+        reading: ["var(--font-reading)", "Georgia", "serif"],
       },
       colors: {
         border: "hsl(var(--border))",

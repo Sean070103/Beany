@@ -26,7 +26,7 @@ export default function SnapsSection() {
           </div>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 lg:gap-5">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4 lg:gap-5">
           {snaps.map((snap, index) => (
             <div
               key={index}

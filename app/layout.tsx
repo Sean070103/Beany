@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Playfair_Display } from "next/font/google";
+import { Inter, Playfair_Display, Lora } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -8,6 +8,10 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 const playfair = Playfair_Display({
   subsets: ["latin"],
   variable: "--font-heading",
+});
+const lora = Lora({
+  subsets: ["latin"],
+  variable: "--font-reading",
 });
 
 export const metadata: Metadata = {
@@ -23,7 +27,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.variable} ${playfair.variable} font-sans bg-background text-foreground`}
+        className={`${inter.variable} ${playfair.variable} ${lora.variable} font-sans bg-background text-foreground`}
       >
         <Navbar />
         <main className="min-h-screen">{children}</main>

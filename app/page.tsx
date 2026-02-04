@@ -1,7 +1,7 @@
 import Hero from "@/components/Hero";
 import ImageGallery from "@/components/ImageGallery";
 import VloggerHighlights from "@/components/VloggerHighlights";
-import SnapsSection from "@/components/SnapsSection";
+import PhotoCarousel from "@/components/PhotoCarousel";
 
 export default function Home() {
   return (
@@ -9,7 +9,7 @@ export default function Home() {
       <Hero />
       <ImageGallery />
       <VloggerHighlights />
-      <SnapsSection />
+      <PhotoCarousel />
     </>
   );
 }

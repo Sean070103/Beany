@@ -1,15 +1,21 @@
 "use client";
 
-import { Instagram, Coffee } from "lucide-react";
+import { Instagram, Facebook, Coffee, MapPin, Phone, Clock } from "lucide-react";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
+function TikTokIcon({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden>
+      <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z" />
+    </svg>
+  );
+}
+
 const socialLinks = [
-  {
-    name: "Instagram",
-    href: "https://www.instagram.com/_beanyavenue",
-    icon: Instagram,
-  },
+  { name: "Facebook", href: "https://www.facebook.com/beanyavenue", icon: Facebook, bg: "bg-[#1877F2]" },
+  { name: "Instagram", href: "https://www.instagram.com/_beanyavenue", icon: Instagram, bg: "bg-[#E4405F]" },
+  { name: "TikTok", href: "https://www.tiktok.com/@_beanyavenue", icon: TikTokIcon, bg: "bg-black" },
 ];
 
 export default function ContactPage() {
@@ -50,89 +56,163 @@ export default function ContactPage() {
       </div>
 
       <div className="relative container mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
-        <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
-          {/* Left: Contact info */}
-          <div
-            className={`transition-all duration-700 ${
-              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-            }`}
-          >
-            <p className="text-xs sm:text-sm uppercase tracking-[0.2em] text-white mb-3 font-sans drop-shadow-sm">
+        <div className="max-w-2xl mx-auto text-center">
+          <div>
+            <p
+              className={`text-xs sm:text-sm uppercase tracking-[0.2em] text-white mb-3 font-sans drop-shadow-sm transition-all duration-600 ${
+                isVisible ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-3"
+              }`}
+              style={{ transitionDelay: "0ms" }}
+            >
               Grab a virtual cup
             </p>
-            <h1 className="text-4xl sm:text-5xl font-bold font-heading mb-6 text-white drop-shadow-md flex items-center gap-3">
+            <h1
+              className={`text-4xl sm:text-5xl font-bold font-heading mb-6 text-white drop-shadow-md flex items-center justify-center gap-3 transition-all duration-600 ${
+                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+              }`}
+              style={{ transitionDelay: "80ms" }}
+            >
               <Coffee className="h-10 w-10 sm:h-12 sm:w-12 text-white" strokeWidth={1.25} aria-hidden />
               Coffee & Conversation
             </h1>
-            <p className="text-amber-50/95 text-base sm:text-lg leading-relaxed max-w-md mb-8 font-sans drop-shadow-sm">
+            <p
+              className={`text-amber-50/95 text-base sm:text-lg leading-relaxed mb-6 font-sans drop-shadow-sm transition-all duration-600 ${
+                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+              }`}
+              style={{ transitionDelay: "160ms" }}
+            >
               Whether you&apos;re curious about our beans, planning your next visit, or
-              just want to say hi—we&apos;d love to hear from you. Drop us a line and
-              we&apos;ll get back to you soon.
+              just want to say hi—reach us on socials or swing by. We&apos;d love to see you.
             </p>
-            <div className="flex items-center gap-3">
-              {socialLinks.map((link) => (
+
+            {/* Socials + handle */}
+            <div
+              className={`flex flex-col items-center gap-3 mb-8 transition-all duration-600 ${
+                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+              }`}
+              style={{ transitionDelay: "240ms" }}
+            >
+              <div className="flex items-center justify-center gap-3 flex-wrap">
+                {socialLinks.map((link) => (
+                  <a
+                    key={link.name}
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-md ${link.bg} text-white hover:opacity-90 hover:scale-105 transition-all duration-200`}
+                    aria-label={link.name}
+                  >
+                    {link.name === "TikTok" ? (
+                      <link.icon className="h-5 w-5" />
+                    ) : (
+                      <link.icon className="h-5 w-5" strokeWidth={2} stroke="currentColor" fill="none" />
+                    )}
+                  </a>
+                ))}
+              </div>
+              <p className="text-amber-200/90 text-sm font-sans">@beanyavenue</p>
+            </div>
+
+            {/* Opening hours */}
+            <div
+              className={`mb-10 transition-all duration-600 ${
+                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+              }`}
+              style={{ transitionDelay: "320ms" }}
+            >
+              <p className="text-xs uppercase tracking-[0.2em] text-amber-200/90 mb-3 font-sans">
+                Our New Operating Hours
+              </p>
+              <div className="text-amber-50/95 text-sm sm:text-base font-sans space-y-1.5">
+                <p className="inline-flex items-center gap-2">
+                  <Clock className="h-4 w-4 text-amber-300/80 flex-shrink-0" aria-hidden />
+                  Tuesday – Thursday | 4:00 PM – 10:00 PM
+                </p>
+                <p className="inline-flex items-center gap-2">
+                  <Clock className="h-4 w-4 text-amber-300/80 flex-shrink-0" aria-hidden />
+                  Friday – Sunday | 4:00 PM – 12:00 AM
+                </p>
+                <p className="text-amber-300/90 font-medium mt-2">Closed every Monday</p>
+              </div>
+            </div>
+
+            {/* Tagline */}
+            <p
+              className={`text-amber-100/90 text-lg font-heading italic mb-12 transition-all duration-600 ${
+                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+              }`}
+              style={{ transitionDelay: "400ms" }}
+            >
+              Your next favorite cup is waiting.
+            </p>
+
+            {/* Visit us — address & phone with actions */}
+            <div
+              className={`mt-12 pt-10 border-t border-white/20 transition-all duration-600 ${
+                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+              }`}
+              style={{ transitionDelay: "480ms" }}
+            >
+              <p className="text-xs uppercase tracking-[0.2em] text-amber-200/90 mb-6 font-sans">
+                Visit us
+              </p>
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 mb-6">
                 <a
-                  key={link.name}
-                  href={link.href}
+                  href="https://www.google.com/maps/search/?api=1&query=240+Gregorio+Delpilar+Poblacion+Dos,+Cabuyao,+Philippines,+4025"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex h-11 w-11 items-center justify-center rounded-xl border border-white/40 bg-white/10 text-white hover:bg-white/20 hover:border-white/60 hover:scale-105 transition-all duration-200 backdrop-blur-sm"
-                  aria-label={link.name}
+                  className="inline-flex items-center gap-2 rounded-full border-2 border-white/50 bg-white/10 px-6 py-3 text-white font-medium hover:bg-white/20 hover:border-white/70 transition-all duration-200 text-sm"
                 >
-                  <link.icon className="h-5 w-5" strokeWidth={1.5} />
+                  <MapPin className="h-4 w-4" strokeWidth={2} />
+                  Get directions
                 </a>
-              ))}
-            </div>
-            <p className="mt-10 text-sm text-amber-200/80 font-sans drop-shadow-sm">
-              240 Gregorio Delpilar, Poblacion Dos, Cabuyao, Philippines · 0918
-              692 4042
-            </p>
-          </div>
-
-          {/* Right: Warm glass form card */}
-          <div
-            className={`transition-all duration-700 ease-out ${
-              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-            }`}
-            style={{ transitionDelay: "150ms" }}
-          >
-            <div className="rounded-2xl border border-amber-200/20 bg-amber-50/10 backdrop-blur-xl p-6 sm:p-8 shadow-[0_8px_32px_rgba(28,25,23,0.25),inset_0_1px_0_rgba(255,251,235,0.2)]">
-              <p className="text-xs uppercase tracking-[0.2em] text-white mb-5 font-sans">
-                Drop us a note
-              </p>
-              <form className="space-y-5">
-                <input
-                  type="text"
-                  name="name"
-                  placeholder="Your name"
-                  className="w-full px-4 py-3.5 rounded-xl border border-white/30 bg-white/10 text-white placeholder:text-white/70 focus:outline-none focus:ring-2 focus:ring-white/30 focus:border-white/50 focus:bg-white/15 transition-all duration-200 font-sans text-sm backdrop-blur-sm hover:border-white/40 hover:bg-white/15"
-                />
-                <input
-                  type="email"
-                  name="email"
-                  placeholder="Email"
-                  className="w-full px-4 py-3.5 rounded-xl border border-white/30 bg-white/10 text-white placeholder:text-white/70 focus:outline-none focus:ring-2 focus:ring-white/30 focus:border-white/50 focus:bg-white/15 transition-all duration-200 font-sans text-sm backdrop-blur-sm hover:border-white/40 hover:bg-white/15"
-                />
-                <input
-                  type="url"
-                  name="website"
-                  placeholder="Website (optional)"
-                  className="w-full px-4 py-3.5 rounded-xl border border-white/30 bg-white/10 text-white placeholder:text-white/70 focus:outline-none focus:ring-2 focus:ring-white/30 focus:border-white/50 focus:bg-white/15 transition-all duration-200 font-sans text-sm backdrop-blur-sm hover:border-white/40 hover:bg-white/15"
-                />
-                <textarea
-                  name="message"
-                  rows={5}
-                  placeholder="What's on your mind? Tell us over a virtual cup..."
-                  className="w-full px-4 py-3.5 rounded-xl border border-white/30 bg-white/10 text-white placeholder:text-white/70 focus:outline-none focus:ring-2 focus:ring-white/30 focus:border-white/50 focus:bg-white/15 transition-all duration-200 resize-y min-h-[120px] font-sans text-sm backdrop-blur-sm hover:border-white/40 hover:bg-white/15"
-                />
-                <button
-                  type="submit"
-                  className="w-full py-4 rounded-xl bg-white/25 text-white text-sm font-medium tracking-wide hover:bg-white/35 hover:scale-[1.01] active:scale-[0.99] border border-white/40 transition-all duration-200 font-sans shadow-lg backdrop-blur-sm"
+                <a
+                  href="tel:09186924042"
+                  className="inline-flex items-center gap-2 rounded-full border-2 border-white/50 bg-white/10 px-6 py-3 text-white font-medium hover:bg-white/20 hover:border-white/70 transition-all duration-200 text-sm"
                 >
-                  Send
-                </button>
-              </form>
+                  <Phone className="h-4 w-4" strokeWidth={2} />
+                  Call us
+                </a>
+              </div>
+              <p className="text-sm text-amber-200/80 font-sans drop-shadow-sm flex flex-col sm:flex-row sm:items-center sm:justify-center gap-1 sm:gap-3">
+                <span className="inline-flex items-center gap-2 justify-center">
+                  <MapPin className="h-4 w-4 text-amber-300/80 flex-shrink-0" aria-hidden />
+                  <a
+                    href="https://www.google.com/maps/search/?api=1&query=240+Gregorio+Delpilar+Poblacion+Dos,+Cabuyao,+Philippines,+4025"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-amber-100 underline underline-offset-2"
+                  >
+                    240 Gregorio Delpilar Poblacion Dos, Cabuyao, Philippines, 4025
+                  </a>
+                </span>
+                <span className="hidden sm:inline text-white/40">·</span>
+                <span className="inline-flex items-center gap-2 justify-center">
+                  <Phone className="h-4 w-4 text-amber-300/80 flex-shrink-0" aria-hidden />
+                  <a href="tel:09186924042" className="hover:text-amber-100 underline underline-offset-2">
+                    0918 692 4042
+                  </a>
+                </span>
+              </p>
             </div>
+          </div>
+        </div>
+
+        {/* Bottom image strip — visual anchor */}
+        <div
+          className={`mt-16 lg:mt-20 max-w-4xl mx-auto grid grid-cols-3 gap-3 transition-all duration-700 ${
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+          }`}
+          style={{ transitionDelay: "600ms" }}
+        >
+          <div className="relative aspect-[4/3] rounded-xl overflow-hidden border border-white/20 shadow-lg">
+            <Image src="/images/p1.webp" alt="Beany Avenue" fill className="object-cover" sizes="280px" />
+          </div>
+          <div className="relative aspect-[4/3] rounded-xl overflow-hidden border border-white/20 shadow-lg">
+            <Image src="/images/p2.webp" alt="Beany Avenue" fill className="object-cover" sizes="280px" />
+          </div>
+          <div className="relative aspect-[4/3] rounded-xl overflow-hidden border border-white/20 shadow-lg">
+            <Image src="/images/s6.png" alt="Beany Avenue" fill className="object-cover" sizes="280px" />
           </div>
         </div>
       </div>

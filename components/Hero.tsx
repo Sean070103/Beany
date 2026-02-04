@@ -24,19 +24,19 @@ export default function Hero() {
 
       {/* Content */}
       <div className="relative z-20 container mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-32 text-center">
-        <div className="animate-in fade-in slide-in-from-bottom-4 duration-700">
+        <div className="animate-in scale-in fade-in duration-700">
           <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-8 text-white font-[var(--font-heading)] text-balance leading-[1.1] tracking-tight drop-shadow-lg [text-shadow:0_2px_12px_rgba(0,0,0,0.5),0_0_1px_rgba(0,0,0,0.8)]">
             Beyond Beans,
             <br />
             <span className="italic font-normal opacity-95">Beyond Coffee</span>
           </h1>
         </div>
-        <div className="animate-in fade-in slide-in-from-bottom-4 duration-700 delay-150">
+        <div className="animate-in slide-up fade-in duration-700 delay-150">
           <p className="text-xl sm:text-2xl md:text-3xl text-white mb-14 max-w-2xl mx-auto leading-relaxed drop-shadow-lg [text-shadow:0_2px_10px_rgba(0,0,0,0.45),0_0_1px_rgba(0,0,0,0.6)]">
             A place where friends make the perfect blend.
           </p>
         </div>
-        <div className="flex flex-col sm:flex-row gap-5 justify-center animate-in fade-in slide-in-from-bottom-4 duration-700 delay-300">
+        <div className="flex flex-col sm:flex-row gap-5 justify-center animate-in slide-up fade-in duration-700 delay-300">
           <Link href="/menu">
             <Button
               size="lg"

@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { cn } from "@/lib/utils";
+import { useEffect, useRef, useState } from "react";
 
 const HIGHLIGHTS = [
   {
@@ -25,10 +26,26 @@ const HIGHLIGHTS = [
 ];
 
 export default function VloggerHighlights() {
+  const [isVisible, setIsVisible] = useState(false);
+  const ref = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => entry.isIntersecting && setIsVisible(true),
+      { threshold: 0.1 }
+    );
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section className="py-16 sm:py-20 lg:py-24 bg-background">
+    <section ref={ref} className="py-16 sm:py-20 lg:py-24 bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mb-8 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
+        <div
+          className={`mb-8 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 transition-all duration-600 ${
+            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+          }`}
+        >
           <div>
             <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground mb-3">
               Highlights
@@ -43,7 +60,7 @@ export default function VloggerHighlights() {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-          {HIGHLIGHTS.map((item) => {
+          {HIGHLIGHTS.map((item, index) => {
             const isDiskartengBasic = item.label === "Diskarteng Basic";
 
             return (
@@ -52,9 +69,12 @@ export default function VloggerHighlights() {
               href={item.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="group block"
-              >
-              <div className="relative aspect-[4/3] sm:aspect-[16/9] rounded-3xl overflow-hidden bg-muted shadow-sm hover:shadow-2xl transition-shadow duration-500">
+              className={`group block transition-all duration-600 ease-out ${
+                isVisible ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-8 scale-95"
+              }`}
+              style={{ transitionDelay: `${150 + index * 100}ms` }}
+            >
+              <div className="relative aspect-[4/3] sm:aspect-[16/9] rounded-3xl overflow-hidden bg-muted shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-1">
                 <Image
                   src={item.image}
                   alt={item.alt}

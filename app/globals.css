@@ -88,6 +88,29 @@
   }
 }
 
+/* Wattpad-style reading typography */
+.reading {
+  font-family: var(--font-reading), Georgia, serif;
+  max-width: 65ch;
+  line-height: 1.8;
+  letter-spacing: 0.01em;
+}
+
+.reading p {
+  margin-bottom: 1.25em;
+}
+
+.reading p:last-child {
+  margin-bottom: 0;
+}
+
+.reading-title {
+  font-family: var(--font-heading), serif;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
@@ -114,6 +137,38 @@
   }
 }
 
+@keyframes slide-up {
+  from {
+    transform: translateY(1.5rem);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes scale-in {
+  from {
+    transform: scale(0.96);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
 .animate-in {
   animation-fill-mode: both;
 }
@@ -126,8 +181,24 @@
   animation-name: slide-in-from-bottom-4;
 }
 
+.slide-up {
+  animation-name: slide-up;
+}
+
+.scale-in {
+  animation-name: scale-in;
+}
+
+.float {
+  animation: float 4s ease-in-out infinite;
+}
+
 .duration-700 {
   animation-duration: 700ms;
+}
+
+.duration-500 {
+  animation-duration: 500ms;
 }
 
 .delay-150 {
