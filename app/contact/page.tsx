@@ -401,36 +401,6 @@ export default function ContactPage() {
             </div>
           </div>
         </div>
-
-        {/* Bottom image highlight */}
-        <div
-          className={`mt-16 lg:mt-20 max-w-4xl mx-auto transition-all duration-700 ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
-          }`}
-          style={{ transitionDelay: "600ms" }}
-        >
-          <div className="relative aspect-[16/9] rounded-2xl overflow-hidden border border-white/20 shadow-2xl">
-            <Image
-              src="/images/p10.webp"
-              alt="Beany Avenue storefront"
-              fill
-              className="object-cover"
-              sizes="(max-width: 1024px) 90vw, 800px"
-            />
-            <div
-              className="absolute inset-0 bg-gradient-to-t from-amber-950/80 via-amber-950/30 to-transparent"
-              aria-hidden
-            />
-            <div className="absolute bottom-5 left-5 right-5 text-left">
-              <p className="text-xs uppercase tracking-[0.3em] text-amber-200/90 mb-2">
-                Find us here
-              </p>
-              <p className="text-lg sm:text-xl font-semibold text-white drop-shadow-md">
-                240 Gregorio Delpilar Poblacion Dos, Cabuyao, Philippines, 4025
-              </p>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   );
