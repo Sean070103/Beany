@@ -51,7 +51,7 @@ const createCoffeeHtml = ({
           <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="max-width:640px; background:#fffaf3; border-radius:24px; overflow:hidden; box-shadow:0 18px 48px rgba(59, 47, 47, 0.15);">
             <tr>
               <td style="padding:28px 32px; background:linear-gradient(135deg,#6f4e37,#3c2f2f); color:#fef7ed;">
-                <p style="margin:0 0 8px; font-size:14px; text-transform:uppercase; letter-spacing:2px;">Beany Roastery</p>
+                <p style="margin:0 0 8px; font-size:14px; text-transform:uppercase; letter-spacing:2px;">Beany Avenue</p>
                 <h1 style="margin:0; font-size:26px;">A fresh cup of feedback is brewing</h1>
                 <p style="margin:12px 0 0; font-size:15px; color:#f8e7d0;">We just received a new note from the brew bar.</p>
               </td>
