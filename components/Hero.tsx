@@ -40,7 +40,8 @@ export default function Hero() {
           <Link href="/menu">
             <Button
               size="lg"
-              className="group px-12 py-7 rounded-full text-xs tracking-[0.2em] uppercase bg-primary text-primary-foreground hover:bg-primary/90 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 ring-2 ring-primary/20"
+              variant="outline"
+              className="group px-10 py-7 rounded-full text-xs tracking-[0.2em] uppercase border-2 border-white/70 hover:border-white bg-white/10 hover:bg-white/20 text-white backdrop-blur-sm transition-all duration-300 hover:scale-[1.02] shadow-[0_2px_12px_rgba(0,0,0,0.2)]"
             >
               Explore Menu
               <ArrowRight className="ml-3 h-4 w-4 group-hover:translate-x-2 transition-transform duration-300" />

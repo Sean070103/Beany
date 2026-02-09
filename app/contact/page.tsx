@@ -27,7 +27,7 @@ function TikTokIcon({ className }: { className?: string }) {
 const socialLinks = [
   {
     name: "Facebook",
-    href: "https://www.facebook.com/beanyavenue",
+    href: "https://www.facebook.com/beanyavenue.co",
     icon: Facebook,
     bg: "bg-[#1877F2]",
   },

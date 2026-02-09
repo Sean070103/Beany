@@ -3,9 +3,10 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Menu, X } from "lucide-react";
+import { Menu, X, MessageCircle } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { usePathname } from "next/navigation";
+import OrderNowButton from "@/components/OrderNowButton";
 
 const links = [
   { href: "/", label: "Home" },
@@ -67,7 +68,7 @@ export default function Navbar() {
                 </span>
               </Link>
 
-              <div className="flex items-center gap-8">
+              <div className="flex items-center gap-6">
                 {links.map((link) => {
                   const basePath = link.href.split("#")[0] || "/";
                   const active =
@@ -102,6 +103,12 @@ export default function Navbar() {
                     </Link>
                   );
                 })}
+                <OrderNowButton
+                  className="rounded-full text-xs tracking-[0.15em] uppercase gap-1.5 bg-primary text-primary-foreground hover:bg-primary/90 px-4 py-2 h-9"
+                >
+                  <MessageCircle className="h-3.5 w-3.5" />
+                  Order Now
+                </OrderNowButton>
               </div>
             </div>
           </div>
@@ -150,6 +157,13 @@ export default function Navbar() {
               <X className="h-5 w-5" />
             </button>
           </div>
+          <OrderNowButton
+            className="flex items-center gap-2 px-3 py-2.5 text-xs uppercase tracking-[0.18em] rounded-xl bg-primary text-primary-foreground font-semibold hover:opacity-90 transition-opacity mb-2"
+            onClick={() => setIsOpen(false)}
+          >
+            <MessageCircle className="h-4 w-4" />
+            Order Now
+          </OrderNowButton>
           <div className="flex flex-col gap-1 mt-2">
             {links.map((link, index) => {
               const basePath = link.href.split("#")[0] || "/";

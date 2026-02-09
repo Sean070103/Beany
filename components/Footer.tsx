@@ -3,6 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Instagram, Facebook } from "lucide-react";
+import OrderNowButton from "@/components/OrderNowButton";
 import { useEffect, useRef, useState } from "react";
 
 function TikTokIcon({ className }: { className?: string }) {
@@ -66,6 +67,13 @@ export default function Footer() {
             <h3 className="font-semibold mb-6 text-base tracking-tight">Quick Links</h3>
             <ul className="space-y-3 text-sm">
               <li>
+                <OrderNowButton
+                  className="text-muted-foreground hover:text-foreground transition-colors duration-200 inline-block font-medium bg-transparent hover:bg-transparent px-0 py-0"
+                >
+                  Order Now
+                </OrderNowButton>
+              </li>
+              <li>
                 <Link href="/" className="text-muted-foreground hover:text-foreground transition-colors duration-200 inline-block">
                   Home
                 </Link>
@@ -94,7 +102,7 @@ export default function Footer() {
             <ul className="space-y-3 text-sm text-muted-foreground leading-relaxed">
               <li>
                 <a
-                  href="https://www.google.com/maps/search/?api=1&query=240+Gregorio+Delpilar+Poblacion+Dos,+Cabuyao,+Philippines,+4025"
+                  href="https://maps.app.goo.gl/NmENtaBBo4vDweLVA"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-foreground transition-colors duration-200 underline underline-offset-2"
@@ -116,7 +124,7 @@ export default function Footer() {
             <h3 className="font-semibold mb-6 text-base tracking-tight">Follow Us</h3>
             <div className="flex items-center gap-3 mb-3 flex-wrap">
               <a
-                href="https://www.facebook.com/beanyavenue"
+                href="https://www.facebook.com/beanyavenue.co"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-md bg-[#1877F2] text-white hover:opacity-90 transition-opacity duration-200 hover:scale-105"
@@ -148,17 +156,17 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Google Map embed - under the four columns */}
+        {/* Google Map embed - under the four columns (Beany Avenue pin) */}
         <div className="mt-12">
           <h3 className="font-semibold mb-4 text-base tracking-tight">Find us</h3>
           <a
-            href="https://www.google.com/maps/search/?api=1&query=240+Gregorio+Delpilar+Poblacion+Dos,+Cabuyao,+Philippines,+4025"
+            href="https://maps.app.goo.gl/NmENtaBBo4vDweLVA"
             target="_blank"
             rel="noopener noreferrer"
             className="block rounded-xl overflow-hidden border border-foreground/10 shadow-sm hover:opacity-95 transition-opacity"
           >
             <iframe
-              src="https://www.google.com/maps?q=240+Gregorio+Delpilar+Poblacion+Dos,+Cabuyao,+Philippines,+4025&z=17&output=embed"
+              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d966.6492073415643!2d121.125079!3d14.276719!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397d9006c69440f%3A0xa480df36cc06cb26!2sBeany%20Avenue!5e0!3m2!1sen!2sus!4v1770604309200!5m2!1sen!2sus"
               width="100%"
               height="220"
               style={{ border: 0 }}

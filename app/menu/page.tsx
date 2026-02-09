@@ -2,6 +2,8 @@
 
 import Image from "next/image";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { MessageCircle } from "lucide-react";
+import OrderNowButton from "@/components/OrderNowButton";
 import { useEffect, useRef, useState } from "react";
 
 export default function MenuPage() {
@@ -34,6 +36,10 @@ export default function MenuPage() {
         <p className="text-muted-foreground text-lg max-w-2xl mx-auto leading-relaxed">
           Discover our carefully crafted selection of coffee, beverages, and dining options.
         </p>
+        <OrderNowButton className="inline-flex mt-6 gap-2 rounded-full text-xs tracking-[0.2em] uppercase px-8 py-6">
+          <MessageCircle className="h-4 w-4" />
+          Order Now via Messenger
+        </OrderNowButton>
       </div>
 
       <div className="max-w-6xl mx-auto">
