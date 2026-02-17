@@ -43,36 +43,42 @@ export default function MenuPage() {
       </div>
 
       <div className="max-w-6xl mx-auto">
-        <Tabs defaultValue="alfresco" className="w-full">
+        <Tabs defaultValue="drinksMenu" className="w-full">
           <div className="flex justify-center mb-12">
             <TabsList className="inline-flex h-12 items-center justify-center rounded-full bg-background/80 backdrop-blur-md border border-foreground/10 p-1.5 shadow-lg">
               <TabsTrigger 
-                value="alfresco" 
+                value="drinksMenu" 
                 className="text-xs uppercase tracking-wider px-6 py-2.5 rounded-full data-[state=active]:bg-foreground data-[state=active]:text-background transition-all duration-200 hover:bg-foreground/5"
               >
-                Alfresco Dining
+                Drinks Menu
               </TabsTrigger>
               <TabsTrigger 
-                value="frappe" 
+                value="drinks" 
                 className="text-xs uppercase tracking-wider px-6 py-2.5 rounded-full data-[state=active]:bg-foreground data-[state=active]:text-background transition-all duration-200 hover:bg-foreground/5"
               >
-                Frappe & Drinks
+                Drinks
               </TabsTrigger>
               <TabsTrigger 
-                value="combo" 
+                value="food" 
                 className="text-xs uppercase tracking-wider px-6 py-2.5 rounded-full data-[state=active]:bg-foreground data-[state=active]:text-background transition-all duration-200 hover:bg-foreground/5"
               >
-                Combo Menu
+                Food
+              </TabsTrigger>
+              <TabsTrigger 
+                value="food2" 
+                className="text-xs uppercase tracking-wider px-6 py-2.5 rounded-full data-[state=active]:bg-foreground data-[state=active]:text-background transition-all duration-200 hover:bg-foreground/5"
+              >
+                Food (2)
               </TabsTrigger>
             </TabsList>
           </div>
 
-          <TabsContent value="alfresco" className="mt-0 animate-in fade-in duration-500">
+          <TabsContent value="drinksMenu" className="mt-0 animate-in fade-in duration-500">
             <div className="bg-card p-6 sm:p-8 lg:p-10 rounded-2xl border border-foreground/10 shadow-xl hover:shadow-2xl transition-shadow duration-300">
               <div className="relative w-full overflow-hidden rounded-xl">
                 <Image
-                  src="/images/Alfresco.jpg"
-                  alt="Beany Avenue Alfresco Dining Menu"
+                  src="/images/Drinks Menu.png"
+                  alt="Beany Avenue Drinks Menu"
                   width={1200}
                   height={1600}
                   className="w-full h-auto rounded-xl hover:scale-[1.01] transition-transform duration-500"
@@ -82,12 +88,12 @@ export default function MenuPage() {
             </div>
           </TabsContent>
 
-          <TabsContent value="frappe" className="mt-0 animate-in fade-in duration-500">
+          <TabsContent value="drinks" className="mt-0 animate-in fade-in duration-500">
             <div className="bg-card p-6 sm:p-8 lg:p-10 rounded-2xl border border-foreground/10 shadow-xl hover:shadow-2xl transition-shadow duration-300">
               <div className="relative w-full overflow-hidden rounded-xl">
                 <Image
-                  src="/images/Frappe.jpg"
-                  alt="Beany Avenue Frappe & Drinks Menu"
+                  src="/images/Drinks.png"
+                  alt="Beany Avenue Drinks Menu (Page 2)"
                   width={1200}
                   height={1600}
                   className="w-full h-auto rounded-xl hover:scale-[1.01] transition-transform duration-500"
@@ -96,12 +102,26 @@ export default function MenuPage() {
             </div>
           </TabsContent>
 
-          <TabsContent value="combo" className="mt-0 animate-in fade-in duration-500">
+          <TabsContent value="food" className="mt-0 animate-in fade-in duration-500">
             <div className="bg-card p-6 sm:p-8 lg:p-10 rounded-2xl border border-foreground/10 shadow-xl hover:shadow-2xl transition-shadow duration-300">
               <div className="relative w-full overflow-hidden rounded-xl">
                 <Image
-                  src="/images/Combo.jpg"
-                  alt="Beany Avenue Combo Menu"
+                  src="/images/Food.png"
+                  alt="Beany Avenue Food Menu"
+                  width={1200}
+                  height={1600}
+                  className="w-full h-auto rounded-xl hover:scale-[1.01] transition-transform duration-500"
+                />
+              </div>
+            </div>
+          </TabsContent>
+
+          <TabsContent value="food2" className="mt-0 animate-in fade-in duration-500">
+            <div className="bg-card p-6 sm:p-8 lg:p-10 rounded-2xl border border-foreground/10 shadow-xl hover:shadow-2xl transition-shadow duration-300">
+              <div className="relative w-full overflow-hidden rounded-xl">
+                <Image
+                  src="/images/Food (2).png"
+                  alt="Beany Avenue Food Menu (Page 2)"
                   width={1200}
                   height={1600}
                   className="w-full h-auto rounded-xl hover:scale-[1.01] transition-transform duration-500"
