@@ -62,29 +62,56 @@ export default function MenuPage() {
           </div>
 
           <TabsContent value="drinks" className="mt-0 animate-in fade-in duration-500">
-            <div className="bg-card p-6 sm:p-8 lg:p-10 rounded-2xl border border-foreground/10 shadow-xl hover:shadow-2xl transition-shadow duration-300">
-              <div className="relative w-full overflow-hidden rounded-xl">
-                <Image
-                  src="/images/Drinks.png"
-                  alt="Beany Avenue Drinks Menu (Page 2)"
-                  width={1200}
-                  height={1600}
-                  className="w-full h-auto rounded-xl hover:scale-[1.01] transition-transform duration-500"
-                />
+            <div className="space-y-8">
+              <div className="bg-card p-6 sm:p-8 lg:p-10 rounded-2xl border border-foreground/10 shadow-xl hover:shadow-2xl transition-shadow duration-300">
+                <div className="relative w-full overflow-hidden rounded-xl">
+                  <Image
+                    src="/images/Drinks Menu.png"
+                    alt="Beany Avenue Drinks Menu"
+                    width={1200}
+                    height={1600}
+                    className="w-full h-auto rounded-xl hover:scale-[1.01] transition-transform duration-500"
+                    priority
+                  />
+                </div>
+              </div>
+              <div className="bg-card p-6 sm:p-8 lg:p-10 rounded-2xl border border-foreground/10 shadow-xl hover:shadow-2xl transition-shadow duration-300">
+                <div className="relative w-full overflow-hidden rounded-xl">
+                  <Image
+                    src="/images/Drinks.png"
+                    alt="Beany Avenue Drinks Menu (Page 2)"
+                    width={1200}
+                    height={1600}
+                    className="w-full h-auto rounded-xl hover:scale-[1.01] transition-transform duration-500"
+                  />
+                </div>
               </div>
             </div>
           </TabsContent>
 
           <TabsContent value="food" className="mt-0 animate-in fade-in duration-500">
-            <div className="bg-card p-6 sm:p-8 lg:p-10 rounded-2xl border border-foreground/10 shadow-xl hover:shadow-2xl transition-shadow duration-300">
-              <div className="relative w-full overflow-hidden rounded-xl">
-                <Image
-                  src="/images/Food.png"
-                  alt="Beany Avenue Food Menu"
-                  width={1200}
-                  height={1600}
-                  className="w-full h-auto rounded-xl hover:scale-[1.01] transition-transform duration-500"
-                />
+            <div className="space-y-8">
+              <div className="bg-card p-6 sm:p-8 lg:p-10 rounded-2xl border border-foreground/10 shadow-xl hover:shadow-2xl transition-shadow duration-300">
+                <div className="relative w-full overflow-hidden rounded-xl">
+                  <Image
+                    src="/images/Food.png"
+                    alt="Beany Avenue Food Menu"
+                    width={1200}
+                    height={1600}
+                    className="w-full h-auto rounded-xl hover:scale-[1.01] transition-transform duration-500"
+                  />
+                </div>
+              </div>
+              <div className="bg-card p-6 sm:p-8 lg:p-10 rounded-2xl border border-foreground/10 shadow-xl hover:shadow-2xl transition-shadow duration-300">
+                <div className="relative w-full overflow-hidden rounded-xl">
+                  <Image
+                    src="/images/Food (2).png"
+                    alt="Beany Avenue Food Menu (Page 2)"
+                    width={1200}
+                    height={1600}
+                    className="w-full h-auto rounded-xl hover:scale-[1.01] transition-transform duration-500"
+                  />
+                </div>
               </div>
             </div>
           </TabsContent>
